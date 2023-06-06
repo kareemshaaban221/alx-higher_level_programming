@@ -7,4 +7,4 @@ def uppercase(str):
             res += chr(iNum - 32)
         else:
             res += i
-    print(res)
+    print("{:s}".format(res))
