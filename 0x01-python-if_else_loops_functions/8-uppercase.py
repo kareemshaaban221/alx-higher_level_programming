@@ -2,8 +2,9 @@
 def uppercase(str):
     res = ''
     for i in str:
-        if ord(i) >= 65 and ord(i) <= 90:
-            res += i
+        iNum = ord(i)
+        if iNum >= 97 and iNum <= 122:
+            res += chr(iNum - 32)
         else:
-            res += chr(ord(i) - 32)
+            res += i
     print(res)
