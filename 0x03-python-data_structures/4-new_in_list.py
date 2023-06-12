@@ -11,3 +11,4 @@ def new_in_list(my_list, idx, element):
         else:
             res[i] = element
         i += 1
+    return res
