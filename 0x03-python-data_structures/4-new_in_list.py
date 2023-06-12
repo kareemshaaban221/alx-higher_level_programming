@@ -7,8 +7,16 @@ def new_in_list(my_list, idx, element):
     i = 0
     while i < len(my_list):
         if i != idx:
-            res[i] = my_list[i]
+            res.append(my_list[i])
         else:
-            res[i] = element
+            res.append(element)
         i += 1
     return res
+
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_element = 9
+new_list = new_in_list(my_list, idx, new_element)
+
+print(new_list)
+print(my_list)
