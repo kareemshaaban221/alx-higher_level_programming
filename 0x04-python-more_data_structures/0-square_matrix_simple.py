@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    res = [];
+    res = []
     for i in matrix:
         temp = []
         for j in i:
