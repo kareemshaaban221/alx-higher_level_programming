@@ -4,6 +4,6 @@ def square_matrix_simple(matrix=[]):
     for i in matrix:
         temp = []
         for j in i:
-            temp.append(j)
+            temp.append(j * j)
         res.append(temp)
     return res
