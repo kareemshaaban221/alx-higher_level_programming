@@ -2,6 +2,5 @@
 def multiply_by_2(a_dictionary):
     res = {}
     for k in a_dictionary:
-        if a_dictionary[k] % 2 == 0:
-            res[k] = a_dictionary[k]
+        res[k] = a_dictionary[k] * 2
     return res
