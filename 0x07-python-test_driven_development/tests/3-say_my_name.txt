@@ -1,0 +1,4 @@
+>>> say_my_name('kareem', 'mohamed')
+My name is kareem mohamed
+>>> say_my_name(5, 'mohamed')
+TypeError
