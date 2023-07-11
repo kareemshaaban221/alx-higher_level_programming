@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
+    if len(matrix) == 0:
+        return matrix
     err1 = "matrix must be a matrix (list of lists) of integers/floats"
     err2 = "Each row of the matrix must have the same size"
     if type(matrix) != list or type(matrix[0]) != list:
