@@ -48,9 +48,8 @@ class Square:
             print()
         else:
             # * shifting in y axis
-            print('\n' * (self.position[1] - 1))
+            print('\n' * self.position[1], end='')
             for i in range(self.size):
                 # * shifting in x axis
                 print(' ' * self.position[0], end='')
-                print('#' * self.size, end='')
-                print()
+                print('#' * self.size)
