@@ -53,3 +53,12 @@ class Rectangle:
             res += "#" * self.width
             res += "\n"
         return res
+
+    def __repr__(self):
+        if self.width == 0 or self.height == 0:
+            return ""
+        res = ""
+        for i in range(self.height):
+            res += "#" * self.width
+            res += "\n"
+        return res
