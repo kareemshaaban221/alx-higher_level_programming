@@ -51,7 +51,7 @@ class Square:
             for i in range(self.__size):
                 # * shifting in x axis
                 for a in range(self.position[0]):
-                    print("_", end="")
+                    print(" ", end="")
                 for j in range(self.__size):
                     print("#", end="")
                 print()
