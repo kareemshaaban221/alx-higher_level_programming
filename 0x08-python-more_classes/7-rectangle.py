@@ -54,7 +54,7 @@ class Rectangle:
             return ""
         res = ""
         for i in range(self.height):
-            res += Rectangle.print_symbol * self.width
+            res += str(self.print_symbol) * self.width
             if i < self.height - 1:
                 res += "\n"
         return res
