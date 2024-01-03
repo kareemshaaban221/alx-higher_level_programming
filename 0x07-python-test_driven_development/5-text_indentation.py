@@ -11,7 +11,7 @@ def text_indentation(text):
     :param text:
     :return:
     """
-    if type(text) != str:
+    if type(text) is not str:
         raise TypeError('text must be a string')
     for char in text:
         print(char, end='')

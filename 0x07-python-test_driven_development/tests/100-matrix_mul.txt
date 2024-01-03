@@ -1,0 +1,55 @@
+>>> mul = __import__('100-matrix_mul').matrix_mul
+>>> mul(1, 1) 
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+>>> mul([], 1) 
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+>>> mul([], []) 
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+>>> mul([[]], []) 
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+>>> mul([1, []], []) 
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+>>> mul([[1]], [])   
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> mul([[1]], [[]]) 
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> mul([[1]], [[1]]) 
+[[1]]
+>>> mul([['kareem']], [[1]]) 
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+>>> mul([[1]], [['kareem']])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+>>> mul([[1]], [[], []])      
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+>>> mul([[],[]], [[],[]]) 
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+>>> mul([[], []], [[[]]])   
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+>>> mul([[1, 2]], [[3], [4]])
+[[11]]
+>>> mul([[12, 8, 4], [3, 17, 14], [9, 8, 10]], [[5, 19, 3], [6, 15, 9], [7, 8, 16]])
+[[136, 380, 172], [215, 424, 386], [163, 371, 259]]

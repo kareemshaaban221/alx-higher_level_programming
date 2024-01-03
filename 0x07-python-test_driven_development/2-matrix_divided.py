@@ -1,5 +1,16 @@
 #!/usr/bin/python3
+"""
+Module matrix_divided
+Prints a given first name and last name.
+"""
+
+
 def matrix_divided(matrix, div):
+    """
+    Prints a text with 2 new lines after each of these characters:.,? and :
+    :param text:
+    :return:
+    """
     errorMessage = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
         raise TypeError(errorMessage)

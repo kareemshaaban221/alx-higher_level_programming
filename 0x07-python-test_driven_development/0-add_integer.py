@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Module add_integer
+Prints a given first name and last name.
+"""
+
+
 def add_integer(a, b=98):
     """
     Add two integers together
