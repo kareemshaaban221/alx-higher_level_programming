@@ -1,0 +1,51 @@
+>>> mul = __import__('100-matrix_mul').matrix_mul
+>>> mul(1, 1) 
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+>>> mul([], 1) 
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+>>> mul([], []) 
+0.0
+>>> mul([[]], []) 
+array([0.])
+>>> mul([1, []], []) 
+Traceback (most recent call last):
+...
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+>>> mul([[1]], [])   
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 1)
+>>> mul([[1]], [[]]) 
+array([], shape=(1, 0), dtype=float64)
+>>> mul([[1]], [[1]]) 
+array([[1]])
+>>> mul([['kareem']], [[1]]) 
+Traceback (most recent call last):
+...
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U6'), dtype('int32')) -> None
+>>> mul([[1]], [['kareem']])
+Traceback (most recent call last):
+...
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('int32'), dtype('<U6')) -> None
+>>> mul([[1]], [[], []])      
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 1)
+>>> mul([[],[]], [[],[]]) 
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 0)
+>>> mul([[], []], [[[]]])   
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 0)
+>>> mul([[1, 2]], [[3], [4]])
+array([[11]])
+>>> mul([[12, 8, 4], [3, 17, 14], [9, 8, 10]], [[5, 19, 3], [6, 15, 9], [7, 8, 16]])
+array([[136, 380, 172],
+       [215, 424, 386],
+       [163, 371, 259]])
