@@ -1,5 +1,9 @@
 >>> myList = __import__('1-my_list').MyList           
 >>> li = myList([]) 
+>>> isinstance(li, list)
+True
+>>> isinstance(li, myList)
+True
 >>> li.print_sorted()
 []
 >>> li = myList([1, 2, 3]) 
