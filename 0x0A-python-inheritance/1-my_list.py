@@ -12,10 +12,7 @@ class MyList(list):
     Args:
         list (_type_): _description_
     """
-    pass
-
     def print_sorted(self):
         """_summary_
         """
-
         print(sorted(list(self)))
