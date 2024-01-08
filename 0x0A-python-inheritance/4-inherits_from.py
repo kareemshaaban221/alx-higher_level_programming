@@ -16,4 +16,4 @@ def inherits_from(obj, a_class):
     Returns:
         _type_: _description_
     """
-    return issubclass(obj, a_class)
+    return isinstance(obj, a_class) and type(obj) is not a_class
