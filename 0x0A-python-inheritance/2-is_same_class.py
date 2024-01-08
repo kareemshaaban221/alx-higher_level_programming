@@ -16,4 +16,4 @@ def is_same_class(obj, a_class):
     Returns:
         _type_: _description_
     """
-    return type(obj) == a_class
+    return type(obj) is a_class
