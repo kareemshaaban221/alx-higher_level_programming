@@ -2,6 +2,7 @@
 """ My class module
 """
 
+
 class Student:
     """ My class
     """
