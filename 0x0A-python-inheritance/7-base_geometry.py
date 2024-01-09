@@ -16,6 +16,7 @@ class BaseGeometry():
         """_summary_
         """
         raise Exception('area() is not implemented')
+
     def integer_validator(self, name, value):
         """_summary_
 
