@@ -16,6 +16,7 @@ class Square(Rectangle):
         """_summary_
         """
         Rectangle.__init__(self, size, size)
+        self.__size = size
 
     def __str__(self):
         """_summary_
@@ -23,7 +24,7 @@ class Square(Rectangle):
         Returns:
             _type_: _description_
         """
-        return f"[Square] {self.__width}/{self.__height}"
+        return f"[Square] {self.__size}/{self.__size}"
 
     def __repr__(self):
         """_summary_
@@ -31,4 +32,4 @@ class Square(Rectangle):
         Returns:
             _type_: _description_
         """
-        return f"[Square] {self.__width}/{self.__height}"
+        return f"[Square] {self.__size}/{self.__size}"
