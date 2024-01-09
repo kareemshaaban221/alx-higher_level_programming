@@ -13,4 +13,7 @@ def to_json_string(my_obj):
         - filename: name of the file
     """
 
-    return json.dumps(my_obj)
+    try:
+        return json.dumps(my_obj)
+    except TypeError as e:
+        raise TypeError(f"{my_obj} is not JSON serializable")
