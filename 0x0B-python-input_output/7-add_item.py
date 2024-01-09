@@ -9,7 +9,7 @@ args = sys.argv[1:]
 current = []
 try:
     current = list(load_from_json_file('add_item.json'))
-except:
+except Exception as e:
     pass
 finally:
     current += list(args)
