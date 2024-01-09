@@ -2,7 +2,6 @@
 """Module 0-read_file.
 Reads from a file and prints.
 """
-import json
 
 
 def class_to_json(obj):
