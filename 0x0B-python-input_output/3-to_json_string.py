@@ -2,6 +2,7 @@
 """Module 0-read_file.
 Reads from a file and prints.
 """
+import json
 
 
 def to_json_string(my_obj):
@@ -12,4 +13,7 @@ def to_json_string(my_obj):
         - filename: name of the file
     """
 
-    return ''
+    try:
+        return json.dumps(my_obj)
+    except TypeError as e:
+        raise TypeError(f"{my_obj} is not JSON serializable")
