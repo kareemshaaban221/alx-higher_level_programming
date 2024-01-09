@@ -15,4 +15,4 @@ class Square(Rectangle):
     def __init__(self, size):
         """_summary_
         """
-        Rectangle.__init__(size, size)
+        Rectangle.__init__(self, size, size)
