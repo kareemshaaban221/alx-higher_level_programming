@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """
 ===========================
 Module with class MyList
@@ -7,6 +6,7 @@ Module with class MyList
 """
 
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):
     """_summary_
     """
