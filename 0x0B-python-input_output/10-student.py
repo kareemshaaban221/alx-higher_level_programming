@@ -16,7 +16,7 @@ class Student:
         di = self.__dict__
         res = {}
         if type(attrs) is list:
-            for k, v in di:
+            for k, v in di.items():
                 if k in attrs:
                     res[k] = v
         else:
