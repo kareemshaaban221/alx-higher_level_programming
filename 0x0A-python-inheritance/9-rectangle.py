@@ -39,7 +39,7 @@ class Rectangle(BaseGeometry):
         Returns:
             _type_: _description_
         """
-        return f"[Rectangle] {self.__width}/<{self.__height}>"
+        return f"[Rectangle] {self.__width}/{self.__height}"
 
     def __repr__(self):
         """_summary_
@@ -47,4 +47,4 @@ class Rectangle(BaseGeometry):
         Returns:
             _type_: _description_
         """
-        return f"[Rectangle] {self.__width}/<{self.__height}>"
+        return f"[Rectangle] {self.__width}/{self.__height}"
