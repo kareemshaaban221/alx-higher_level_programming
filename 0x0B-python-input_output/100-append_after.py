@@ -9,7 +9,7 @@ def append_after(filename="", search_string="", new_string=""):
     Args:
         n (_type_): _description_
     """
-    
+
     with open(filename, 'r') as f:
         lines = f.readlines()
     new_content = ""
