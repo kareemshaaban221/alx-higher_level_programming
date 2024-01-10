@@ -18,8 +18,10 @@ for line in stdin:
     totalcount += 1
     if totalcount == 10:
         sortme = sorted(dictstatus.keys())
-        print("File size:", totalsize)
+        print(f"File size: {totalsize}")
         for keys in sortme:
             print("{}: {}".format(keys, dictstatus[keys]))
         totalcount = 0
+        totalsize = 0
+        dictstatus = {}
         continue
