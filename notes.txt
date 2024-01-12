@@ -1,0 +1,1 @@
+Function A3 {param($File) python -m doctest -v $File}; Function A2 {git add .; git commit -m 'test'; git push}; Function A1 {param($file) python -m pycodestyle $file}; Set-Alias -Name acp -Value A2; Set-Alias -Name pystyle -Value A1; Set-Alias -Name pytest -Value A3 
