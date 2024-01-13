@@ -131,19 +131,13 @@ class TestRectangle(unittest.TestCase):
             rect1.display()
         fake_stdout.assert_has_calls([
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('\n'),
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('\n'),
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('#'),
-            mock.call.write(''),
             mock.call.write('\n')
         ])
 
@@ -154,6 +148,29 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(rect1), "[Rectangle] (1) 0/0 - 2/3")
         rect1.x, rect1.y, rect1.width, rect1.height = 5, 6, 10, 11
         self.assertEqual(str(rect1), "[Rectangle] (1) 5/6 - 10/11")
+
+    def test_display_x_and_y(self):
+        """_summary_
+        """
+        rect1 = Rectangle(2, 3, 1, 2)
+        with mock.patch('sys.stdout') as fake_stdout:
+            rect1.display()
+        fake_stdout.assert_has_calls([
+            mock.call.write('\n'),
+            mock.call.write('\n'),
+            mock.call.write(' '),
+            mock.call.write('#'),
+            mock.call.write('#'),
+            mock.call.write('\n'),
+            mock.call.write(' '),
+            mock.call.write('#'),
+            mock.call.write('#'),
+            mock.call.write('\n'),
+            mock.call.write(' '),
+            mock.call.write('#'),
+            mock.call.write('#'),
+            mock.call.write('\n')
+        ])
 
 if __name__ == "__main__":
     unittest.main()

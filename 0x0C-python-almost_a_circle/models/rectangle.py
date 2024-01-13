@@ -116,9 +116,13 @@ class Rectangle(Base):
     def display(self):
         """_summary_
         """
+        for i in range(self.y):
+            print()
         for i in range(self.height):
+            for j in range(self.x):
+                print(end=' ')
             for j in range(self.width):
-                print('#', end='')
+                print(end='#')
             print()
 
     def __str__(self):
