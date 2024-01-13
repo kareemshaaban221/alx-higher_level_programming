@@ -128,10 +128,30 @@ class Rectangle(Base):
     def __str__(self):
         """_summary_
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+        return "[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__,
             self.id,
             self.x,
             self.y,
             self.width,
             self.height
         )
+
+    def update(self, *args, **kwargs):
+        """_summary_
+        """
+        length = len(args)
+        if length <= 0:
+            if kwargs is not None:
+                for k, v in kwargs.items():
+                    setattr(self, k, v)
+        else:
+            self.id = args[0]
+            if length > 1:
+                self.width = args[1]
+            if length > 2:
+                self.height = args[2]
+            if length > 3:
+                self.x = args[3]
+            if length > 4:
+                self.y = args[4]
