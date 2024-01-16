@@ -2,6 +2,7 @@
 """ My class module
 """
 import json
+import csv
 
 
 class Base():
@@ -91,11 +92,51 @@ class Base():
         dicts = cls.from_json_string(content)
         return [cls.create(**dict) for dict in dicts]
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """_summary_
+
+        Args:
+            list_objs (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
+        list_objs_dict = []
+        for i in range(len(list_objs)):
+            list_objs_dict.append(list_objs[i].to_dictionary())
+        with open(cls.__name__+".csv", "w") as f:
+            writer = csv.DictWriter(f, cls.getCols(), lineterminator='\n')
+            writer.writerows(list_objs_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
+        objs = []
+        with open(cls.__name__+".csv", "r") as f:
+            reader = csv.DictReader(f)
+            for row in reader.reader:
+                for i in range(len(row)):
+                    row[i] = int(row[i])
+                obj = dict(zip(cls.getCols(), row))
+                objs.append(cls.create(**obj))
+        return objs
+
     @staticmethod
     def dummy_instance():
         """_summary_
         """
         return Base()
+
+    @staticmethod
+    def getCols():
+        """_summary_
+        """
+        return ['id']
 
     def setCounter(val):
         """_summary_

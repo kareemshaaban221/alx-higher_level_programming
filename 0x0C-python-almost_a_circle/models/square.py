@@ -77,6 +77,12 @@ class Square(Rectangle):
         }
 
     @staticmethod
+    def getCols():
+        """_summary_
+        """
+        return ['id', 'size', 'x', 'y']
+
+    @staticmethod
     def dummy_instance():
         """_summary_
         """
