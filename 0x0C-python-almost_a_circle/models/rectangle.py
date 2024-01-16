@@ -155,3 +155,14 @@ class Rectangle(Base):
                 self.x = args[3]
             if length > 4:
                 self.y = args[4]
+
+    def to_dictionary(self):
+        """_summary_
+        """
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }

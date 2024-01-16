@@ -193,6 +193,24 @@ class TestSquare(unittest.TestCase):
         r1.update(x=1, size=2, y=3)
         self.assertEqual(str(r1), "[Square] (89) 1/3 - 2")
 
+    def test_to_dict(self):
+        """_summary_
+        """
+        r1 = Square(1, 2, 3)
+        self.assertEqual(r1.to_dictionary(), {
+            'x': 2,
+            'y': 3,
+            'id': 1,
+            'size': 1
+        })
+        r1.update(id=58)
+        self.assertEqual(r1.to_dictionary(), {
+            'x': 2,
+            'y': 3,
+            'id': 58,
+            'size': 1
+        })
+
 
 if __name__ == "__main__":
     unittest.main()
