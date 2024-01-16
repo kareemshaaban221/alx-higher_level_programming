@@ -97,7 +97,10 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertListEqual(Base.from_json_string(json_dictionary), [dictionary])
+        self.assertListEqual(
+            Base.from_json_string(json_dictionary),
+            [dictionary]
+        )
         json_dictionary = Base.to_json_string([])
         self.assertListEqual(Base.from_json_string(json_dictionary), [])
         json_dictionary = Base.to_json_string(None)
@@ -106,6 +109,42 @@ class TestBase(unittest.TestCase):
         self.assertListEqual(Base.from_json_string(json_dictionary), [])
         self.assertListEqual(Base.from_json_string(None), [])
         self.assertListEqual(Base.from_json_string('[]'), [])
+
+    def test_create(self):
+        """_summary_
+        """
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
+        r1 = Rectangle(3, 5)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
+        r1 = Rectangle(3, 5, 1, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
+        r1 = Rectangle(3, 5, 1, 1, 55)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
+        s1 = Square(3)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
+        s1 = Square(3, 5)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
+        s1 = Square(3, 5, 1)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
+        s1 = Square(3, 5, 1, 55)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
 
 
 if __name__ == "__main__":

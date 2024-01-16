@@ -67,6 +67,20 @@ class Base():
             return []
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """_summary_
+        """
+        obj = cls.dummy_instance()
+        obj.update(**dictionary)
+        return obj
+
+    @staticmethod
+    def dummy_instance():
+        """_summary_
+        """
+        return Base()
+
     def setCounter(val):
         """_summary_
 

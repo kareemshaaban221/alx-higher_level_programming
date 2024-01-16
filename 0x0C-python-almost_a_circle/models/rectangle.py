@@ -166,3 +166,9 @@ class Rectangle(Base):
             'height': self.height,
             'width': self.width
         }
+
+    @staticmethod
+    def dummy_instance():
+        """_summary_
+        """
+        return Rectangle(1, 1)

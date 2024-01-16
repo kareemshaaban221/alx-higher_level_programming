@@ -75,3 +75,9 @@ class Square(Rectangle):
             'size': self.size,
             'y': self.y
         }
+
+    @staticmethod
+    def dummy_instance():
+        """_summary_
+        """
+        return Square(1)
