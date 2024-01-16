@@ -146,6 +146,34 @@ class TestBase(unittest.TestCase):
         s2 = Square.create(**s1_dictionary)
         self.assertEqual(str(s1), str(s2))
 
+    def test_load_from_file(self):
+        """_summary_
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        test_pack = {}
+        for rect in list_rectangles_input:
+            test_pack["{}".format(rect)] = 0
+        for rect in list_rectangles_output:
+            test_pack["{}".format(rect)] += 1
+        for testcase in test_pack.values():
+            self.assertEqual(testcase, 1)
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_squares_input = [s1, s2]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        test_pack = {}
+        for squa in list_squares_input:
+            test_pack["{}".format(squa)] = 0
+        for squa in list_squares_output:
+            test_pack["{}".format(squa)] += 1
+        for testcase in test_pack.values():
+            self.assertEqual(testcase, 1)
+
 
 if __name__ == "__main__":
     unittest.main()

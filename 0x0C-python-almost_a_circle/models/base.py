@@ -48,9 +48,10 @@ class Base():
         Args:
             list_objs (_type_): _description_
         """
+        list_objs_dict = []
         for i in range(len(list_objs)):
-            list_objs[i] = list_objs[i].to_dictionary()
-        content = cls.to_json_string(list_objs)
+            list_objs_dict.append(list_objs[i].to_dictionary())
+        content = cls.to_json_string(list_objs_dict)
         with open(cls.__name__+".json", "w") as f:
             f.write(content)
 
@@ -74,6 +75,21 @@ class Base():
         obj = cls.dummy_instance()
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
+        content = ""
+        with open(cls.__name__+".json", "r") as f:
+            content = f.read()
+        if content == "":
+            return []
+        dicts = cls.from_json_string(content)
+        return [cls.create(**dict) for dict in dicts]
 
     @staticmethod
     def dummy_instance():
