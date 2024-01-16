@@ -91,6 +91,22 @@ class TestBase(unittest.TestCase):
             content
         )
 
+    def test_from_json_string(self):
+        """_summary_
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertListEqual(Base.from_json_string(json_dictionary), [dictionary])
+        json_dictionary = Base.to_json_string([])
+        self.assertListEqual(Base.from_json_string(json_dictionary), [])
+        json_dictionary = Base.to_json_string(None)
+        self.assertListEqual(Base.from_json_string(json_dictionary), [])
+        json_dictionary = Base.to_json_string('wrong type')
+        self.assertListEqual(Base.from_json_string(json_dictionary), [])
+        self.assertListEqual(Base.from_json_string(None), [])
+        self.assertListEqual(Base.from_json_string('[]'), [])
+
 
 if __name__ == "__main__":
     unittest.main()

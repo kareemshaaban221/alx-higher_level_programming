@@ -54,6 +54,19 @@ class Base():
         with open(cls.__name__+".json", "w") as f:
             f.write(content)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """_summary_
+
+        Args:
+            json_string (_type_): _description_
+        """
+        is_none = json_string is None
+        not_list = type(json_string) is not str
+        if is_none or not_list or json_string == '':
+            return []
+        return json.loads(json_string)
+
     def setCounter(val):
         """_summary_
 
