@@ -1,2 +1,2 @@
--- this is my first sql in alx
+-- lists all MySQL server databases
 SHOW DATABASES;

@@ -1,4 +1,2 @@
--- this is my first sql in alx
-START TRANSACTION;
-CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
-COMMIT;
+-- create database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS `hbtn_0c_0`;
