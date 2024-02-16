@@ -1,5 +1,6 @@
 -- This is my comment
-SELECT b.title, a.genre_id
-FROM tv_show_genres AS a
-JOIN tv_shows AS b
-ON a.show_id = b.id;
+SELECT a.title, b.genre_id
+FROM tv_shows AS a
+JOIN tv_show_genres AS b
+ON b.show_id = a.id
+ORDER BY a.title ASC, b.genre_id ASC;
